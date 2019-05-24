@@ -1,0 +1,14 @@
+server:
+  port: 9501
+spring:
+  application:
+    name: spring-cloud-eureka
+eureka:
+  instance:
+    hostname: eureka-server1  # eurekaʵ����������
+ 
+  client:
+    register-with-eureka: true #�����Լ�ע�ᵽeureka��
+    fetch-registry: true #����eureka������ȡ�����ע����Ϣ
+    service-url:
+      defaultZone: http://eureka-server:9500/eureka/

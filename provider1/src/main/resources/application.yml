@@ -1,0 +1,15 @@
+server:
+  port: 9401
+spring:
+  application:
+    name: provider-message
+
+eureka:
+  instance:
+    instance:
+    preferIpAddress : true
+    instance-id: ${spring.cloud.client.ipAddress}:${spring.application.name}:${server.port}
+
+  client:
+    service-url:
+      defaultZone: http://eureka-server:9500/eureka,http://eureka-server1:9501/eureka

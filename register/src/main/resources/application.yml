@@ -1,10 +1,14 @@
 server:
   port: 9500
+spring:
+  application:
+    name: spring-cloud-eureka
 eureka:
   instance:
     hostname: eureka-server  # eureka实例的主机名
+
   client:
-    register-with-eureka: false #不把自己注册到eureka上
-    fetch-registry: false #不从eureka上来获取服务的注册信息
+    register-with-eureka: true #不把自己注册到eureka上
+    fetch-registry: true #不从eureka上来获取服务的注册信息
     service-url:
-      defaultZone: http://localhost:9500/eureka/
+      defaultZone: http://eureka-server1:9501/eureka/
